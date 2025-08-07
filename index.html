@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>paintingapp</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+</head>
+<body>
+  <div id="toolbar">
+    <button onclick="setBrush()">🖌️ Brush</button>
+    <button onclick="setEraser()">🧽 Eraser</button>
+    <label>🎨 <input type="color" id="colorPicker" value="#000000"></label>
+    <label>🖊️ Size <input type="range" id="brushSize" min="1" max="50" value="5"></label>
+    <button onclick="undo()">↩️ Undo</button>
+    <button onclick="redo()">↪️ Redo</button>
+    <button onclick="clearCanvas()">🧼 Clear</button>
+    <button onclick="saveProject()">💾 Save</button>
+    <button onclick="loadProject()">📂 Load</button>
+    <button onclick="exportPNG()">📷 Export</button>
+  </div>
+  <canvas id="drawingCanvas" width="1000" height="600"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
