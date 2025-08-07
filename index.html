@@ -1,27 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>paintingapp</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
 </head>
 <body>
+  <header>
+    <h1>🎨 SillyPaintings</h1>
+    <p>Made with ❤️ for my daughter</p>
+  </header>
+
   <div id="toolbar">
-    <button onclick="setBrush()">🖌️ Brush</button>
-    <button onclick="setEraser()">🧽 Eraser</button>
-    <label>🎨 <input type="color" id="colorPicker" value="#000000"></label>
-    <label>🖊️ Size <input type="range" id="brushSize" min="1" max="50" value="5"></label>
-    <button onclick="undo()">↩️ Undo</button>
-    <button onclick="redo()">↪️ Redo</button>
-    <button onclick="clearCanvas()">🧼 Clear</button>
-    <button onclick="saveProject()">💾 Save</button>
-    <button onclick="loadProject()">📂 Load</button>
-    <button onclick="exportPNG()">📷 Export</button>
+    <button onclick="setBrush()" title="Brush">🖌️</button>
+    <button onclick="setEraser()" title="Eraser">🧽</button>
+    <input type="color" id="colorPicker" title="Pick a Color" />
+    <input type="range" id="brushSize" min="1" max="50" value="5" title="Brush Size" />
+    <select id="layerSelector" onchange="switchLayer(this.value)" title="Switch Layer">
+      <option value="0">Layer 1</option>
+      <option value="1">Layer 2</option>
+      <option value="2">Layer 3</option>
+    </select>
+    <button onclick="clearCanvas()" title="Clear All">🧼</button>
+    <button onclick="saveProject()" title="Save">💾</button>
+    <button onclick="loadProject()" title="Load">📂</button>
+    <button onclick="exportPNG()" title="Export">📷</button>
   </div>
-  <canvas id="drawingCanvas" width="1000" height="600"></canvas>
+
+  <!-- Make canvas fill 90% of viewport width and height -->
+  <div id="canvas-container"></div>
+
+  <footer>
+    <p>Designed to inspire creativity 🖍️</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
