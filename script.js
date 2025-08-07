@@ -105,3 +105,4 @@ function exportPNG() {
   link.href = mergedCanvas.toDataURL();
   link.click();
 }
+ 
